@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(46, 46, 46);
+}
+
+nav{
+    padding: 13px;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav a{
+    margin: 0 15px;
+    padding: 13px 10px;
+    color: white;
+    letter-spacing: 2px;
+}
