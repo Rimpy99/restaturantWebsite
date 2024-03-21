@@ -52,11 +52,11 @@ nav a{
 }
 
 /* info */
-.info{
+#banner{
     margin-top: 60px;
     background-image: url('./assets/info2.jpg');
     background-position: center;
-    height: 60vh;
+    height: 50vh;
     background-color: red;
     color:white;
     display: flex;
@@ -65,17 +65,53 @@ nav a{
     text-align: center;
 }
 
-.info > div > h1{
+#banner > h1{
     font-size: 160px;
 }
 
-.info > div > p{
-    font-size: 30px;
-    padding: 10px;
+#info{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#info > p{
+    padding: 10px 0;
 }
 
 #menu > h1{
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     color: rgb(0, 0, 0);
+}
+
+footer{
+    background-color: rgb(26, 26, 26);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    letter-spacing: 2px;
+    line-height: 28px;
+}
+
+footer div{
+    padding: 8px 0;
+}
+
+footer a{
+    color: white;
+    margin: 0 10px;
+}
+
+.social{
+    width: 30px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.x-social{
+    padding: 2px;
 }
