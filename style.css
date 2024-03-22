@@ -9,6 +9,10 @@
 
 body{
     background-color: rgb(238, 237, 237);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* overflow: hidden; */
 }
 
 a, h2, h3, h4, h5, h6, p, span{
@@ -22,13 +26,14 @@ h1{
     font-size: 100px;
 }
 
+h3{
+    font-size: 22px;
+}
+
 /* navbar */
 
 header{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(26, 26, 26);
     position: fixed;
     top: 0;
@@ -36,7 +41,29 @@ header{
 }
 
 nav{
-    padding: 18px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left-side{
+    display: flex;
+    align-items: center;
+}
+
+#logo{
+    animation: rotate 8s linear infinite;
+    transform-origin: center;
+    padding: 0;
+    display: flex;
+}
+
+#logo > img{
+    width: 50px;
+    padding: 0;
+    margin: 0;
 }
 
 a{
@@ -49,6 +76,12 @@ nav a{
     padding: 18px 10px;
     color: white;
     letter-spacing: 2px;
+}
+
+.basket{
+    color: white;
+    z-index: 1000;
+    font-size: 25px;
 }
 
 /* banner */
@@ -104,10 +137,6 @@ nav a{
     padding: 0 150px 100px;
 }
 
-.pizza-block > img{
-    width: 150px;
-}
-
 .pizza-block{
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
@@ -116,17 +145,20 @@ nav a{
     position: relative;
 }
 
+.pizza-block > img{
+    width: 150px;
+}
+
 .pizza-block-info{
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 .pizza-block-info > h3{
     letter-spacing: 2px;
-    font-size: 22px;
     padding-bottom: 10px;
 }
 
@@ -155,6 +187,11 @@ nav a{
     cursor: pointer;
     border: none;
     background-color: rgb(238, 237, 237);
+    transition: background-color .2s ease-in-out;
+}
+
+.pizza-block-button:hover, .btn:hover{
+    background-color: rgb(227, 227, 227);
 }
 
 /* footer */
@@ -178,11 +215,95 @@ footer a{
 }
 
 .social{
-    width: 30px;
+    width: 30px; 
     background-color: white;
     border-radius: 7px;
 }
 
 .x-social{
     padding: 2px;
+}
+
+.pizza-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.pizza-modal{
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    background-color: white;
+    z-index: 1000;
+    width: 50%;
+    padding: 50px;
+    border-radius: 12px;
+}
+
+.pizza-modal-heading{
+    font-size: 30px;
+}
+
+.pizza-modal-desc{
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.pizza-modal-x{
+    width: 20px;
+}
+
+.close{
+    font-size: 20px;
+    color: black;
+    padding: 0;
+}
+
+.pizza-modal-options{
+    padding: 20px;
+}
+
+.pizza-modal-options > h3{
+    padding: 50px 0 20px;
+}
+
+.pizza-modal-buttons-container{
+    width: 100%;
+    padding-top: 70px;
+    text-align: right;
+}
+
+.btn{
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(238, 237, 237);
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+    font-weight: bold;
+}
+
+.pizza-modal-left-btn{
+    margin-right: 20px;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
