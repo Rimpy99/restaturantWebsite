@@ -18,7 +18,9 @@
                 <a href="#menu">Menu</a>
             </div>
             <a href="./subpages/order.html">
-                <i class="fas fa-shopping-basket basket"></i>
+                <i class="fas fa-shopping-basket basket">
+                    <div class="basket-order-counter" id="basket-order-counter">0</div>
+                </i>
             </a>
         </nav>
     </header>
@@ -40,7 +42,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, podwójną mozzarellą i podwójną kiełbasą pepperoni</p>
                         <p class="pizza-block-price">34,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId0">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/capriciosa.avif" alt="pizza capriciosa">
@@ -49,7 +51,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, mozzarellą, szynką i pieczarkam</p>
                         <p class="pizza-block-price">34,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId4">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/carbonara.avif" alt="pizza carbonara">
@@ -58,7 +60,7 @@
                         <p class="pizza-block-desc">z sosem kremowym, mozzarellą, boczkiem, pieczarkami i cebulą</p>
                         <p class="pizza-block-price">34,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId1">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/diavola.avif" alt="pizza diavola">
@@ -67,7 +69,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, mozzarellą, kiełbasą pepperoni, cebulą i papryczkami jalapeno</p>
                         <p class="pizza-block-price">39,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId5">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/hawajska_new.avif" alt="pizza hawajska">
@@ -76,7 +78,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, mozzarellą, szynką i ananasem</p>
                         <p class="pizza-block-price">34,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId2">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/new-yorker.avif" alt="pizza new yorker">
@@ -85,7 +87,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, mozzarellą, kiełbasą pepperoni, szynką, boczkiem i pieczarkami</p>
                         <p class="pizza-block-price">39,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId6">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/vegetarina.avif" alt="pizza vegetarina">
@@ -94,7 +96,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, mozzarellą, kukurydzą, pomidorkami koktajlowymi, papryką, cebulą i oregano</p>
                         <p class="pizza-block-price">34,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId3">+</button>
                 </div>
                 <div class="pizza-block">
                     <img src="./assets/vesuvio.avif" alt="pizza vesuvio">
@@ -103,7 +105,7 @@
                         <p class="pizza-block-desc">z sosem pomidorowym, podwójną mozzarellą i szynką</p>
                         <p class="pizza-block-price">34,99 zł</p>
                     </div>
-                    <button class="pizza-block-button">+</button>
+                    <button class="pizza-block-button add-pizza-button" value="addPizzaId7">+</button>
                 </div>
             </div>
         </div>
@@ -123,36 +125,42 @@
             <p>&copy; All rights reserved.</p>
         </div>
     </footer>
-    <!-- modal dla wyboru opcji do pizzy -->
-    <div class="pizza-background"></div>
-    <div class="pizza-modal">
+    <!-- okno do wyboru opcji do pizzy -->
+    <div class="pizza-background pizza-modal-close" id="pizza-modal-background"></div>
+    <div class="pizza-modal" id="pizza-modal">
         <div class="pizza-block">
-            <img src="./assets/vesuvio.avif" alt="pizza vesuvio">
+            <img src="./assets/vesuvio.avif" alt="pizza vesuvio" id="pizza-modal-img">
             <div class="pizza-block-info">
-                <h3 class="pizza-modal-heading">Vesuvio</h3>
-                <p class="pizza-modal-desc">z sosem pomidorowym, podwójną mozzarellą i szynką</p>
+                <h3 class="pizza-modal-heading" id="pizza-modal-name">Vesuvio</h3>
+                <p class="pizza-modal-desc" id="pizza-modal-desc">z sosem pomidorowym, podwójną mozzarellą i szynką</p>
             </div>
-            <button class="pizza-block-button"><img src="./assets/close.png" alt="ikonka X do zamknięcia okna" class="pizza-modal-x"></button>
+            <button class="pizza-block-button pizza-modal-close"><img src="./assets/close.png" alt="ikonka X do zamknięcia okna" class="pizza-modal-x"></button>
         </div>
         <div class="pizza-modal-options">
             <hr>
             <h3>Rozmiar:</h3>
-            <select name="" id="">
-                <option value="t" selected>średnia - 30cm: 34,99 zł</option>
-                <option value="t2" >duża - 40cm: 39,99 zł</option>
+            <select class="pizza-modal-select">
+                <option value="normal" id="pizzaSizeOption1" selected>średnia - 30cm: 34,99 zł</option>
+                <option value="big" id="pizzaSizeOption2" >duża - 40cm: 39,99 zł</option>
             </select>
             <h3>Sosy:</h3>
-            Pomidorowy
-            <input type="checkbox" name="">
+            <div class="pizza-modal-sauce">
+                <input type="checkbox" id="tomato-sauce-checkbox">
+                <label for="tomato-sauce-checkbox">Pomidorowy (+ 2,50 zł)</label>
+            </div>
             <br>
-            Czosnkowy
-            <input type="checkbox" name="">
+            <div class="pizza-modal-sauce">
+                <input type="checkbox" id="garlic-sauce-checkbox">
+                <label for="garlic-sauce-checkbox">Czosnkowy (+ 2,50 zł)</label>
+            </div>
             <div class="pizza-modal-buttons-container">
-                <button class="btn pizza-modal-left-btn">Dodaj do zamówienia</button>
-                <button class="btn">Anuluj</button>
+                <button class="btn pizza-modal-left-btn" id="add-to-orders-btn">Dodaj do zamówienia</button>
+                <button class="btn pizza-modal-close">Anuluj</button>
             </div>
         </div>
     </div>
+    <!-- okna zamówienia -->
+    <div class="pizza-background pizza-modal-close" id="order-modal-background"></div>
     <script type="module" src="script.js"></script>
     <script type="module" src="pizzaData.js"></script>
 </body>
