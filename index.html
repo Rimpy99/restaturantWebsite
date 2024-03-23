@@ -17,11 +17,11 @@
                 <a href="./index.html">Strona główna</a>
                 <a href="#menu">Menu</a>
             </div>
-            <a href="./subpages/order.html">
+            <span id="basket-orders-counter">
                 <i class="fas fa-shopping-basket basket">
-                    <div class="basket-order-counter" id="basket-order-counter">0</div>
+                    <div class="basket-order-counter">0</div>
                 </i>
-            </a>
+            </span>
         </nav>
     </header>
     <section id="banner">
@@ -125,6 +125,7 @@
             <p>&copy; All rights reserved.</p>
         </div>
     </footer>
+
     <!-- okno do wyboru opcji do pizzy -->
     <div class="pizza-background pizza-modal-close" id="pizza-modal-background"></div>
     <div class="pizza-modal" id="pizza-modal">
@@ -159,8 +160,14 @@
             </div>
         </div>
     </div>
+
     <!-- okna zamówienia -->
-    <div class="pizza-background pizza-modal-close" id="order-modal-background"></div>
+    <div class="pizza-background orders-modal-close" id="orders-modal-background"></div>
+    <div class="pizza-modal" id="orders-modal">
+        <button class="pizza-block-button orders-modal-close"><img src="./assets/close.png" alt="ikonka X do zamknięcia okna" class="pizza-modal-x"></button>
+        <h2>TWOJE ZAMÓWIENIE</h2>
+        <hr>
+    </div>
     <script type="module" src="script.js"></script>
     <script type="module" src="pizzaData.js"></script>
 </body>
