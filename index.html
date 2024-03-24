@@ -17,9 +17,9 @@
                 <a href="./index.html">Strona główna</a>
                 <a href="#menu">Menu</a>
             </div>
-            <span id="basket-orders-counter">
+            <span id="basket-orders-btn">
                 <i class="fas fa-shopping-basket basket">
-                    <div class="basket-order-counter">0</div>
+                    <div class="basket-order-counter" id="basket-orders-counter">0</div>
                 </i>
             </span>
         </nav>
@@ -166,7 +166,7 @@
     <div class="pizza-modal" id="orders-modal">
         <button class="pizza-block-button orders-modal-close"><img src="./assets/close.png" alt="ikonka X do zamknięcia okna" class="pizza-modal-x"></button>
         <h2>TWOJE ZAMÓWIENIE</h2>
-        <hr>
+        <div class="orders-modal-content-container" id="orders-modal-content-container"></div>
     </div>
     <script type="module" src="script.js"></script>
     <script type="module" src="pizzaData.js"></script>

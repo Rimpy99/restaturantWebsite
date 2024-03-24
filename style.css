@@ -356,8 +356,64 @@ footer a{
     padding: 30px 0;
 }
 
-/* animacje */
+.orders-modal-content-empty{
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    letter-spacing: 2px;
+}
 
+.orders-modal-content{
+    width: 100%;
+    padding: 40px 0;
+}
+
+.orders-modal-content-element{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+/* .orders-modal-content-element > h3{
+    font-size: 18px;
+    font-weight: 400;
+} */
+
+.order-modal-sauce{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.orders-modal-content-btn-container{
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.orders-modal-content-element-right{
+    display: flex;
+    align-items: center;
+}
+
+.orders-modal-content-element-right > h2{
+    font-size: 25px;
+}
+
+.trash-btn{
+    color: rgb(227, 0, 0);
+    transition: color .2s ease-in-out;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.trash-btn:hover{
+    color: red;
+}
+
+/* animacje */
 @keyframes rotate{
     from{
         transform: rotate(0deg);
