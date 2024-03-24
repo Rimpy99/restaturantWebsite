@@ -102,8 +102,6 @@ const displayAllPizzas = () => {
     const spaceWhereOrderIsDisplayed = document.querySelector("#orders-modal-content-container");
     spaceWhereOrderIsDisplayed.innerHTML = "";
 
-    console.log(orders)
-
     if(orders.length){
         spaceWhereOrderIsDisplayed.innerHTML = `
             <div class="orders-modal-content">
@@ -142,8 +140,32 @@ const displayAllPizzas = () => {
                     <h2>W SUMIE:</h2>
                     <h2>${changePriceFormat(sumPrice())} zł</h2>
                 </div>
+                <div>
+                    <form class="orders-form">
+                        <label for="name">Wpisz swoje imię:</label><br>
+                        <div style="display: flex; align-items: center;">
+                            <input type="text" name="name" id="input-name">
+                            <div id="name-error"></div>
+                        </div>
+                        <br>
+                    
+                        <label for="address">Wpisz adres, gdzie ma być dostarczone zamówienie:</label><br>
+                        <div style="display: flex; align-items: center;">
+                            <input type="text" name="address" id="input-address">
+                            <div id="address-error"></div>
+                        </div>
+                        <br>
+                    
+                        <label for="phoneNumber">Wpisz swój numer telefonu:</label><br>
+                        <div style="display: flex; align-items: center;">
+                            <input type="tel" name="phoneNumber" pattern="[0-9]*" id="input-phoneNumber">
+                            <div id="phoneNumber-error"></div>
+                        </div>
+                        <br>
+                    </form>
+                </div>
                 <div class="orders-modal-content-btn-container">
-                    <button class="btn">Przejdź dalej</button>
+                    <button class="btn" id="order-submit-btn">Przejdź do płatności</button>
                 </div>
             </div>
         `;
@@ -153,7 +175,30 @@ const displayAllPizzas = () => {
         trashBtns.forEach(btn => btn.addEventListener('click', () => {
             const [id, elemToRemove] = btn.id.split('-');
             removeItemFromOrder(parseInt(id), elemToRemove);
-        }))
+        }));
+
+        document.querySelector('#input-phoneNumber').addEventListener('input', (event) => {
+            const input = event.target;
+            input.value = input.value.replace(/\D/g, '');
+
+            if (input.value.length > 9) {
+                input.value = input.value.slice(0, 9);
+            }
+        });
+
+        document.querySelector("#order-submit-btn").addEventListener('click', () => checkOrderForm());
+
+        const checkOrderForm = () => {
+            const name = document.querySelector('#input-name').value;
+            const address = document.querySelector('#input-address').value;
+            const phoneNumber = document.querySelector('#input-phoneNumber').value;
+
+            document.querySelector('#name-error').innerHTML = `${!name.replace(/\s/g, '').length ? "<p>Wpisz swoje imię.</p>" : ""}`;
+
+            document.querySelector('#address-error').innerHTML = `${!address.replace(/\s/g, '').length ? "<p>Wpisz swój adres.</p>" : ""}`;
+
+            document.querySelector('#phoneNumber-error').innerHTML = `${phoneNumber.length != 9 ? "<p>Wpisz swój numer telefonu.</p>" : ""}`;
+        };
     }else{
         spaceWhereOrderIsDisplayed.innerHTML = `
             <div class="orders-modal-content-empty">

@@ -413,6 +413,29 @@ footer a{
     color: red;
 }
 
+.orders-form{
+    padding-top: 50px;
+}
+
+.orders-form > label{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.orders-form > div > input{
+    margin: 10px 0 20px;
+    padding: 5px;
+    width: 300px;
+    font-size: 18px;
+    border: 1px solid black;
+}
+
+.orders-form > div > div{
+    font-size: 20px;
+    color: red;
+    padding: 10px;
+}
+
 /* animacje */
 @keyframes rotate{
     from{
