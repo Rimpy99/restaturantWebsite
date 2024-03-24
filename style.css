@@ -377,11 +377,6 @@ footer a{
     padding: 12px 0;
 }
 
-/* .orders-modal-content-element > h3{
-    font-size: 18px;
-    font-weight: 400;
-} */
-
 .order-modal-sauce{
     font-size: 18px;
     font-weight: 400;
@@ -437,16 +432,22 @@ footer a{
     padding: 10px;
 }
 
-/* animacje */
-@keyframes rotate{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
+.fade-in-animation{
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.5s ease-in forwards;
 }
 
+.fade-in-animation-5d{
+    animation-delay: .5s;
+}
+
+
+.fade-in-animation-1s{
+    animation-delay: 1s;
+}
+
+/* RWD */
 @media all and (max-width: 1600px){
     #menu-content{
         display: grid;
@@ -517,5 +518,26 @@ footer a{
 
     .orders-form > div > input{
         width: 100%;
+    }
+}
+
+/* animacje */
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
