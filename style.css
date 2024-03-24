@@ -37,6 +37,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 900;
 }
 
 nav{
@@ -155,7 +156,7 @@ nav span{
     display: grid;
     grid-template-columns: repeat(2,  750px);
     gap: 50px;
-    padding: 0 150px 100px;
+    padding-bottom: 100px;
 }
 
 .pizza-block{
@@ -443,5 +444,78 @@ footer a{
     }
     to{
         transform: rotate(360deg);
+    }
+}
+
+@media all and (max-width: 1600px){
+    #menu-content{
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        /* gap: 30px; */
+        padding: 40px 0;
+    }
+
+    .pizza-modal{
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media all and (max-width: 610px){
+    .menu-display-none{
+        display: none;
+    }
+
+    #banner > h1{
+        font-size: 90px;
+    }
+
+    #info{
+        text-align: left;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .pizza-block{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pizza-block-info{
+        text-align: justify;
+        padding: 0;
+    }
+
+    .pizza-block-info > *{
+        padding: 15px 0;
+    }
+
+    .pizza-modal{
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        border-radius: 0px;
+        overflow: scroll;
+    }
+
+    .pizza-modal-select{
+        width: 100%;
+    }
+
+    .pizza-modal-buttons-container > *{
+        margin: 10px 0;
+    }
+
+    #orders-modal{
+        padding-top: 40px;
+    }
+
+    .orders-form > div{
+        flex-direction: column;
+    }
+
+    .orders-form > div > input{
+        width: 100%;
     }
 }

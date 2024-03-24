@@ -218,6 +218,7 @@ const removeItemFromOrder = (id, elemToRemove) => {
         orders.find(order => order.orderId == id).garlicSauce = false;
     }
 
+    basketOrderCounter.innerText = orders.length;
     displayAllPizzas();
 }
 
